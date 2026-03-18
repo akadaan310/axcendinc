@@ -80,7 +80,7 @@ function ComplianceVisual() {
         <rect x="140" y="60" width="80" height="8" rx="2" fill="#10B981" opacity="0.3" />
         <rect x="140" y="80" width="120" height="4" rx="1" fill="#10B981" opacity="0.1" />
         <rect x="140" y="90" width="100" height="4" rx="1" fill="#10B981" opacity="0.1" />
-        
+
         <circle cx="145" cy="120" r="8" fill="url(#compGrad)" />
         <path d="M141 120 L144 123 L149 118" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <rect x="165" y="118" width="80" height="4" rx="1" fill="#10B981" opacity="0.2" />
@@ -92,7 +92,7 @@ function ComplianceVisual() {
         <circle cx="145" cy="180" r="8" fill="url(#compGrad)" />
         <path d="M141 180 L144 183 L149 178" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         <rect x="165" y="178" width="80" height="4" rx="1" fill="#10B981" opacity="0.2" />
-        
+
         <path d="M280 180 A30 30 0 1 1 320 220" stroke="#10B981" strokeWidth="1" strokeDasharray="4 4" />
       </svg>
     </div>
@@ -149,14 +149,13 @@ const sections = [
     customVisual: <ComplianceVisual />,
     title: 'Compliance Is a Program, Not a Checkbox.',
     body: [
-      'Axcend practitioners operate within federal compliance frameworks—NIST RMF, FISMA, DIACAP—at the operational level, ensuring security is built-in, not just audited.',
+      'Axcend practitioners operate within federal compliance frameworks—NIST RMF, FISMA, ensuring security is built-in, not just audited.',
       'We support the full Authorization to Operate (ATO) lifecycle and manage POA&M processes, ensuring your systems remain defensible across all audits and transitions.',
     ],
     bullets: [
       'NIST RMF Authorization to Operate (ATO)',
       'FISMA Compliance Programs',
       'PCI-DSS Assessment Support',
-      'DIACAP Transition Support',
       'POA&M Development & Management',
       'Continuous Authorization Maintenance',
     ],
@@ -262,8 +261,8 @@ function SectionCard({
               section.customVisual
             ) : (
               /* eslint-disable-next-line @next/next/no-img-element */
-              <img 
-                src={section.imageSrc} 
+              <img
+                src={section.imageSrc}
                 alt={section.title}
                 className="absolute inset-0 w-full h-full object-cover"
               />

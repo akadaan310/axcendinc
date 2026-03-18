@@ -202,26 +202,10 @@ export default function Footer() {
         style={{ borderTop: '1px solid var(--border-subtle)' }}
       >
         <p className="text-xs" style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>
-          © 2026 Axcend, Inc. All rights reserved. · 8(a) Minority Owned · GSA STARS III Awardee
+          © 2026 Axcend, Inc. All rights reserved.
         </p>
         <div className="flex items-center gap-5">
-          <Link
-            href="/privacy"
-            className="text-xs hover:text-white transition-colors"
-            style={{ color: 'var(--text-secondary)' }}
-          >
-            Privacy Policy
-          </Link>
-          <span
-            className="text-xs px-2 py-0.5 rounded"
-            style={{
-              fontFamily: 'var(--font-mono)',
-              background: 'var(--bg-elevated)',
-              color: 'var(--text-secondary)',
-            }}
-          >
-            CAGE: 7FU62
-          </span>
+
         </div>
       </div>
     </footer>

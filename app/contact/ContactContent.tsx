@@ -399,21 +399,6 @@ function ContactPanel() {
               className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0"
               style={{ background: 'var(--accent-blue-dim)' }}
             >
-              <Mail size={14} style={{ color: 'var(--accent-blue)' }} />
-            </div>
-            <a
-              href="mailto:info@axcendinc.com"
-              className="text-sm transition-colors hover:text-white"
-              style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}
-            >
-              info@axcendinc.com
-            </a>
-          </div>
-          <div className="flex items-center gap-3">
-            <div
-              className="w-8 h-8 rounded flex items-center justify-center flex-shrink-0"
-              style={{ background: 'var(--accent-blue-dim)' }}
-            >
               <Linkedin size={14} style={{ color: 'var(--accent-blue)' }} />
             </div>
             <a

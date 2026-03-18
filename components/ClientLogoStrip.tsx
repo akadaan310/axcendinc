@@ -10,7 +10,7 @@ const agencies = [
   { name: 'Dept. of Commerce', abbr: 'DOC', src: '/logos/doc-logo-news.png' },
   { name: 'NOAA', abbr: 'NOAA', src: '/logos/NOAA.png' },
   { name: 'Defense Security Cooperation Agency', abbr: 'DSCA', src: '/logos/DSCA-new.jpg' },
-  { name: 'FBI', abbr: 'FBI', src: '/logos/fbi-logo.png' },
+  { name: 'FBI', abbr: 'FBI', src: '/logos/fbi-logo-new2.png' },
 ];
 
 function AgencySeal({ agency }: { agency: typeof agencies[0] }) {
@@ -87,7 +87,7 @@ export default function ClientLogoStrip({ variant = 'grid', showLabel = true }: 
           transitionDelay: '600ms',
         }}
       >
-        {['Billion Dollar Home Builder', 'Multi-Million Dollar Amazon Shipper', 'Securities Brokerage'].map(
+        {['Billion Dollar Home Builder', 'Multi-Million Dollar Amazon Shipper', 'Securities Brokerage', 'Commercial Clients'].map(
           (client) => (
             <span
               key={client}

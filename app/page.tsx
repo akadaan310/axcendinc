@@ -126,9 +126,6 @@ export default function HomePage() {
                 border: '1px solid rgba(196,154,42,0.25)',
               }}
             >
-
-              <Star size={11} style={{ display: 'inline', marginRight: '6px' }} />
-              GSA ·  MAS · HACS Certified
             </span>
           </div>
 
@@ -158,6 +155,7 @@ export default function HomePage() {
 
           {/* Badge row */}
           <div className="hero-badges flex flex-wrap gap-3 mb-10">
+
             <span
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold"
               style={{
@@ -167,30 +165,9 @@ export default function HomePage() {
                 fontFamily: 'var(--font-mono)',
               }}
             >
-              <Star size={10} />
-              8(a) STARS III · GSA
-            </span>
-            <span
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold"
-              style={{
-                background: 'var(--accent-blue-dim)',
-                border: '1px solid rgba(0,87,255,0.25)',
-                color: 'var(--accent-blue)',
-                fontFamily: 'var(--font-mono)',
-              }}
-            >
               8(a) SBA Certified · Minority Owned
             </span>
-            <span
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold"
-              style={{
-                border: '1px solid var(--border-subtle)',
-                color: 'var(--text-secondary)',
-                fontFamily: 'var(--font-mono)',
-              }}
-            >
-              Fairfax, Virginia · Est. Federal Contractor
-            </span>
+
           </div>
 
           {/* CTAs */}
@@ -431,10 +408,13 @@ export default function HomePage() {
               >
                 {[
                   ['GSA 8(a) STARS III', 'Master Contract: 47QTCB22D0115'],
-                  ['Seaport Enhanced', 'DUNS/UEI: 079944214 · N6H6A8RBPHK7'],
-                  ['MCTSSA (Marine Corps)', 'CAGE CODE: 7FU62'],
-                  ['Sole Source up to $4.5M', 'Period: 2021 – 2031'],
-                  ['NAICS', '541511 · 541512 · 541513 · 541519 · 541611'],
+                  ['SeaPort NXG', 'Contract No.: N0017821D8947'],
+                  ['MCTSSA (Marine Corps)', 'M68909-20-D-7603'],
+                  ['GAS MAS', 'Contract No.: 47QTCA25D0050 (54151S & 54151HACS)'],
+                  ['GSA OASIS+ 8(a)', 'Contract No.: 47QRCA25DA202'],
+                  /*
+
+                  */
                 ].map(([label, value]) => (
                   <div
                     key={label}
