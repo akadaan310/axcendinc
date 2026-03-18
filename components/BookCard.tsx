@@ -50,9 +50,9 @@ export default function BookCard({
       >
         {image ? (
           /* eslint-disable-next-line @next/next/no-img-element */
-          <img 
-            src={image} 
-            alt={title} 
+          <img
+            src={image}
+            alt={title}
             className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
@@ -62,9 +62,7 @@ export default function BookCard({
           className="absolute bottom-0 left-0 right-0 p-3"
           style={{ background: 'linear-gradient(to top, rgba(12,12,26,0.9) 0%, transparent 100%)' }}
         >
-          <p className="text-xs font-semibold leading-snug" style={{ color: 'var(--text-primary)' }}>
-            {title}
-          </p>
+
         </div>
       </a>
 

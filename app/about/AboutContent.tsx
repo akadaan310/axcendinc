@@ -64,9 +64,9 @@ function CertCard({ icon, name, abbr, delay = 0 }: CertCardProps) {
 
 function TimelineDecor() {
   const milestones = [
-    { year: '2004', label: 'Founded in Fairfax, Virginia' },
-    { year: '2010', label: 'First DoD Intelligence Community engagement' },
-    { year: '2015', label: 'CISSP & cloud certifications team-wide' },
+    { year: '2015', label: 'Founded in Fairfax, Virginia' },
+    { year: '2015', label: 'Government Cyber engagement' },
+    { year: '2016', label: 'First DoD and Intel Cyber/Cloud engagement' },
     { year: '2018', label: 'Cloud Computing book published' },
     { year: '2020', label: 'NIST 800-53 Rev 4 guide released' },
     { year: '2021', label: 'GSA 8(a) STARS III award' },
@@ -328,37 +328,7 @@ export default function AboutContent() {
         </div>
       </section>
 
-      {/* ====================================================
-          STATS BAND
-      ==================================================== */}
-      <section
-        className="py-20 md:py-24 px-6 md:px-12 lg:px-24 glass-dark"
-        style={{ borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}
-        ref={statsRef.ref as React.RefObject<HTMLElement>}
-      >
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
-            <StatCounter value={20} suffix="+" label="Years in Federal Service" delay={0} />
-            <StatCounter value={7} suffix="" label="Active Certifications" delay={100} />
-            {/* Static for decimal */}
-            <div
-              className={`text-center animate-enter ${statsRef.isVisible ? 'is-visible' : ''}`}
-              style={{ transitionDelay: '200ms' }}
-            >
-              <div
-                className="text-4xl md:text-5xl font-bold mb-2"
-                style={{ fontFamily: 'var(--font-display)', color: 'var(--text-primary)' }}
-              >
-                $4.5M
-              </div>
-              <p className="text-sm font-medium tracking-wide" style={{ color: 'var(--text-secondary)' }}>
-                STARS III Sole Source Limit
-              </p>
-            </div>
-            <StatCounter value={3} suffix="" label="Published Technical Books" delay={300} />
-          </div>
-        </div>
-      </section>
+
 
       {/* ====================================================
           CONTACT INFO BAND
@@ -388,8 +358,7 @@ export default function AboutContent() {
                   className="not-italic text-sm leading-relaxed"
                   style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}
                 >
-                  8950 Colesbury Pl<br />
-                  Fairfax, Virginia 22031
+                  Fairfax, Virginia
                 </address>
               </div>
               <div className="flex items-center gap-3">

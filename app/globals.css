@@ -17,6 +17,23 @@
   --color-accent-blue: #0057FF;
   --color-gold: #C49A2A;
   --color-navy: #0A1628;
+
+  /* Double the body text sizes (roughly 2x the standard 16px baseline) 
+     Redefining standard Tailwind utility values */
+  --font-size-xs: 1.05rem;     /* 24px * 0.7 = 16.8px */
+  --font-size-sm: 1.225rem;    /* 28px * 0.7 = 19.6px */
+  --font-size-base: 1.4rem;    /* 32px * 0.7 = 22.4px */
+  --font-size-lg: 1.575rem;    /* 36px * 0.7 = 25.2px */
+  --font-size-xl: 1.75rem;     /* 40px * 0.7 = 28px */
+
+  /* Keep section titles (2xl and above) at their original absolute sizes 
+     to provide a clear hierarchy even with very large body text. */
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-7xl: 4.5rem;
 }
 
 /* ============================================================
@@ -81,9 +98,16 @@ body {
   font-family: var(--font-body);
 }
 
-/* ============================================================
-   GRAIN OVERLAY
-   ============================================================ */
+/* Explicitly target paragraph and list elements to ensure doubling 
+   even if they don't explicitly use a Tailwind class */
+p, li, dd, dt, blockquote {
+  font-size: 1.4rem; /* 2rem * 0.7 */
+  line-height: 1.6;
+}
+
+/* Specific scale for smaller items like captions or pills */
+.text-xs, .caption { font-size: 1.05rem !important; }
+.text-sm { font-size: 1.225rem !important; }
 
 body::after {
   content: '';

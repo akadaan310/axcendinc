@@ -5,12 +5,21 @@ export async function POST(request: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY || 're_placeholder');
   try {
     const body = await request.json();
-    const { name, organization, email, phone, inquiryType, message } = body;
+    const { name, organization, email, phone, inquiryType, message, num1, num2, op, captchaAnswer } = body;
 
     // Validate required fields
-    if (!name || !organization || !email || !inquiryType || !message) {
+    if (!name || !organization || !email || !inquiryType || !message || !captchaAnswer) {
       return NextResponse.json(
         { error: 'Missing required fields' },
+        { status: 400 }
+      );
+    }
+
+    // Verify CAPTCHA
+    const expected = op === '+' ? num1 + num2 : num1 - num2;
+    if (parseInt(captchaAnswer) !== expected) {
+      return NextResponse.json(
+        { error: 'Invalid security answer. Please try again.' },
         { status: 400 }
       );
     }

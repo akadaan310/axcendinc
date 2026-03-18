@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -18,6 +18,7 @@ const schema = z.object({
   phone: z.string().optional(),
   inquiryType: z.string().min(1, 'Please select an inquiry type'),
   message: z.string().min(20, 'Please provide more detail (min 20 characters)'),
+  captchaAnswer: z.string().min(1, 'Security answer is required'),
 });
 
 type FormValues = z.infer<typeof schema>;
@@ -93,6 +94,17 @@ function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [captcha, setCaptcha] = useState<{ num1: number; num2: number; op: string } | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    const n1 = Math.floor(Math.random() * 9) + 6;
+    const n2 = Math.floor(Math.random() * 5) + 1;
+    const operators = ['+', '-'];
+    const op = operators[Math.floor(Math.random() * operators.length)];
+    setCaptcha({ num1: n1, num2: n2, op });
+  }, []);
 
   const {
     register,
@@ -105,11 +117,22 @@ function ContactForm() {
   async function onSubmit(data: FormValues) {
     setIsLoading(true);
     setServerError(null);
+    if (!captcha) {
+      setServerError('Security check not initialized. Please refresh.');
+      setIsLoading(false);
+      return;
+    }
+
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          num1: captcha.num1,
+          num2: captcha.num2,
+          op: captcha.op,
+        }),
       });
       const json = await res.json();
       if (!res.ok) {
@@ -268,6 +291,28 @@ function ContactForm() {
         </div>
       )}
 
+      {/* Math CAPTCHA */}
+      {mounted && captcha && (
+        <div className="pt-2 pb-1">
+          <label
+            className="block text-xs font-semibold tracking-wider uppercase mb-2"
+            style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-mono)' }}
+          >
+            Security Check: What is {captcha.num1} {captcha.op} {captcha.num2}?{' '}
+            <span style={{ color: '#F87171' }}>*</span>
+          </label>
+          <div className="max-w-[150px]">
+            <input
+              {...register('captchaAnswer')}
+              type="number"
+              placeholder="?"
+              className="form-input text-center font-bold"
+            />
+          </div>
+          <FieldError message={errors.captchaAnswer?.message} />
+        </div>
+      )}
+
       {/* Submit */}
       <button
         type="submit"
@@ -331,8 +376,7 @@ function ContactPanel() {
               <MapPin size={14} style={{ color: 'var(--accent-blue)' }} />
             </div>
             <address className="not-italic text-sm leading-relaxed" style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>
-              8950 Colesbury Pl<br />
-              Fairfax, Virginia 22031
+              Fairfax, Virginia
             </address>
           </div>
           <div className="flex items-center gap-3">
@@ -379,7 +423,7 @@ function ContactPanel() {
               className="text-sm transition-colors hover:text-white"
               style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}
             >
-              linkedin.com/company/axcend
+              LinkedIn
             </a>
           </div>
         </div>

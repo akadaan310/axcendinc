@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, ExternalLink, Handshake, Award } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ExternalLink, Handshake, Award, Shield } from 'lucide-react';
 import { useInView } from '@/hooks/useInView';
 
 /* ============================================================
@@ -35,6 +35,33 @@ const stars3Bullets = [
   'Pre-vetted 8(a) pool reduces acquisition risk and timeline',
   'Broad IT scope: cybersecurity, cloud, infrastructure, advisory',
   'Streamlined task order placement through any federal agency',
+];
+
+const hacsDetails = [
+  { label: 'Contract Vehicle', value: 'GSA MAS HACS' },
+  { label: 'Master Contract', value: '47QTCA25D0050' },
+  { label: 'DUNS/UEI', value: '079944214 · N6H6A8RBPHK7' },
+  { label: 'CAGE CODE', value: '7FU62' },
+  { label: 'Program Manager', value: 'Nadine Rafaels' },
+  { label: 'PM Email', value: 'STARS3@axcendinc.com' },
+  { label: 'Contract Type', value: 'IDIQ, T&M, Labor Hour, Fixed Price' },
+  { label: 'Period of Perf.', value: '2 years' },
+];
+
+const hacsBullets = [
+  'Quickly order and implement services from technically-evaluated vendors',
+  'Rapidly address potential vulnerabilities',
+  'Stop adversaries before they impact networks',
+  'Test high-priority IT systems',
+];
+
+const hacsServices = [
+  'Cyber Hunt',
+  'High Value Asset Assessments',
+  'Incident Response',
+  'Penetration Testing',
+  'Risk and Vulnerability Assessments',
+  'Incident Handling and Event Management',
 ];
 
 /* ============================================================
@@ -74,7 +101,7 @@ export default function ContractsContent() {
       {/* ── Hero ── */}
       <section
         className="relative min-h-[60vh] flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-32 pb-16 topo-bg"
-        style={{ background: '#0A1628' }}
+        style={{ background: 'var(--bg-base)' }}
       >
         {/* Gold accent bar */}
         <div
@@ -288,6 +315,169 @@ export default function ContractsContent() {
                           style={{ color: 'var(--text-secondary)' }}
                         >
                           {description}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
+      {/* ── HACS ── */}
+      <section
+        className="pb-16 px-6 md:px-12 lg:px-24"
+        style={{ background: 'var(--bg-base)' }}
+      >
+        <div className="max-w-7xl mx-auto">
+          <RevealSection>
+            <div
+              className="rounded-xl overflow-hidden"
+              style={{
+                background: 'var(--bg-surface)',
+                border: '1px solid var(--border-subtle)',
+                borderLeft: '4px solid var(--accent-blue)',
+              }}
+            >
+              {/* HACS header */}
+              <div
+                className="px-10 py-8"
+                style={{ borderBottom: '1px solid var(--border-subtle)' }}
+              >
+                <div className="flex items-start gap-4 flex-wrap">
+                  <div
+                    className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{
+                      background: 'var(--accent-blue-dim)',
+                      border: '1px solid rgba(0,87,255,0.2)',
+                      color: 'var(--accent-blue)',
+                    }}
+                  >
+                    <Shield size={24} />
+                  </div>
+                  <div>
+                    <span
+                      className="text-xs font-semibold tracking-widest uppercase block mb-1"
+                      style={{ color: 'var(--accent-blue)', fontFamily: 'var(--font-mono)' }}
+                    >
+                      Security-Focused Vehicle
+                    </span>
+                    <h2
+                      className="text-2xl md:text-3xl font-bold"
+                      style={{
+                        fontFamily: 'var(--font-display)',
+                        color: 'var(--text-primary)',
+                        letterSpacing: '-0.01em',
+                      }}
+                    >
+                      Highly Adaptive Cybersecurity Services (HACS)
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                {/* Left — description + bullets */}
+                <div
+                  className="px-10 py-8"
+                  style={{ borderRight: '1px solid var(--border-subtle)' }}
+                >
+                  <p
+                    className="text-xl font-medium leading-relaxed mb-6"
+                    style={{ color: 'var(--text-secondary)' }}
+                  >
+                    The GSA MAS HACS GWAC provides a pre-vetted, rapid acquisition pathway for obtaining qualified cybersecurity vendors to protect high-value assets and critical infrastructure.
+                  </p>
+
+                  <div className="mb-8">
+                    <p
+                      className="text-xs font-semibold tracking-widest uppercase mb-3"
+                      style={{
+                        color: 'var(--text-secondary)',
+                        fontFamily: 'var(--font-mono)',
+                      }}
+                    >
+                      Why It Matters for Your Agency
+                    </p>
+                    <ul className="space-y-3">
+                      {hacsBullets.map((b) => (
+                        <li key={b} className="flex items-start gap-3">
+                          <CheckCircle2
+                            size={16}
+                            className="flex-shrink-0 mt-0.5"
+                            style={{ color: 'var(--accent-blue)' }}
+                          />
+                          <span
+                            className="text-sm leading-relaxed"
+                            style={{ color: 'var(--text-secondary)' }}
+                          >
+                            {b}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <p
+                      className="text-xs font-semibold tracking-widest uppercase mb-3"
+                      style={{
+                        color: 'var(--text-secondary)',
+                        fontFamily: 'var(--font-mono)',
+                      }}
+                    >
+                      Axcend is certified in all 6 HACS services:
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                       {hacsServices.map((s) => (
+                         <div key={s} className="flex items-center gap-2">
+                            <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--accent-blue)' }} />
+                            <span className="text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>{s}</span>
+                         </div>
+                       ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right — monospace data card */}
+                <div className="px-10 py-8">
+                  <p
+                    className="text-xs font-semibold tracking-widest uppercase mb-4"
+                    style={{
+                      color: 'var(--text-secondary)',
+                      fontFamily: 'var(--font-mono)',
+                    }}
+                  >
+                    Contract Details
+                  </p>
+
+                  {/* Monospace data card */}
+                  <div
+                    className="rounded-lg p-6"
+                    style={{
+                      background: 'var(--bg-elevated)',
+                      border: '1px solid var(--border-subtle)',
+                      fontFamily: 'var(--font-mono)',
+                    }}
+                  >
+                    {hacsDetails.map(({ label, value }) => (
+                      <div
+                        key={label}
+                        className="flex flex-col sm:flex-row sm:gap-2 mb-2.5 last:mb-0"
+                      >
+                        <span
+                          className="text-xs flex-shrink-0 w-40"
+                          style={{ color: 'var(--text-secondary)' }}
+                        >
+                          {label}:
+                        </span>
+                        <span
+                          className="text-xs font-semibold"
+                          style={{ color: 'var(--text-primary)' }}
+                        >
+                          {value}
                         </span>
                       </div>
                     ))}

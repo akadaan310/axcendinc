@@ -81,7 +81,7 @@ export default function InsightsContent() {
     {
       title: 'Cloud Computing: From Beginning to End',
       description:
-        'A comprehensive technical guide to cloud computing technology and the methodologies required to migrate existing applications to the cloud. Covers not only the technical architecture of public and private cloud platforms, but the strategy, design, and in-depth implementation details practitioners need to execute real-world migrations.',
+        'A comprehensive technical guide to cloud computing technology and the methodologies required to migrate existing applications to the cloud.',
       audience:
         'Cloud architects, enterprise IT leaders, federal program managers considering cloud adoption, and engineers preparing for AWS or Azure certifications.',
       accentColor: 'var(--accent-blue)',

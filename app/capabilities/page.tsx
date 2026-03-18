@@ -9,7 +9,7 @@ const capabilities = [
     icon: <Shield size={28} />,
     title: 'Cybersecurity & Compliance',
     description:
-      'Axcend cybersecurity practitioners have designed and operated security programs for the most sensitive environments in the U.S. government — DoD, Intelligence Community, and civilian agencies operating under FISMA mandates. We bring the same adversarial rigor and compliance depth to commercial enterprises.',
+      'Axcend cybersecurity practitioners have designed and operated security programs for the most sensitive environments in the U.S. government — DoD, Intelligence Community, and civilian agencies operating under FISMA and CNSSI 1253 mandates.  We bring the same adversarial rigor and compliance depth to commercial enterprises.',
     services: [
       'Security Architecture',
       'NIST RMF / ATO Support',

@@ -55,9 +55,7 @@ const capabilitiesCols = [
   },
 ];
 
-const megaMenuCerts = [
-  'CISSP', 'CEH', 'PMP', 'AWS Solutions Architect', 'CCNA', 'RHCSA', 'ITIL V3 Foundation'
-];
+
 
 const insightCards = [
   {
@@ -114,7 +112,7 @@ export default function MegaMenu({ activePanel, onClose }: MegaMenuProps) {
     >
       {activePanel === 'capabilities' && (
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-8">
-          <div className="grid grid-cols-5 gap-8">
+          <div className="grid grid-cols-4 gap-8">
             {capabilitiesCols.map((col) => (
               <div key={col.title}>
                 <Link
@@ -148,32 +146,7 @@ export default function MegaMenu({ activePanel, onClose }: MegaMenuProps) {
               </div>
             ))}
             
-            {/* Dedicated Certifications Column */}
-            <div>
-              <div
-                className="flex items-center gap-2 mb-4 font-semibold text-sm cursor-default"
-                style={{ color: 'var(--text-primary)' }}
-              >
-                <span style={{ color: 'var(--accent-blue)' }}><Star size={16} /></span>
-                Certifications
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {megaMenuCerts.map((cert) => (
-                  <span
-                    key={cert}
-                    className="text-[10px] px-2 py-1 rounded font-semibold tracking-wider uppercase cursor-default"
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      background: 'var(--gold-dim)',
-                      color: 'var(--gold)',
-                      border: '1px solid rgba(196,154,42,0.2)',
-                    }}
-                  >
-                    {cert}
-                  </span>
-                ))}
-              </div>
-            </div>
+
           </div>
 
           {/* Bottom strip */}
@@ -304,7 +277,7 @@ export default function MegaMenu({ activePanel, onClose }: MegaMenuProps) {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4">
               <div
                 className="rounded-md p-4"
                 style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-subtle)' }}
@@ -333,17 +306,31 @@ export default function MegaMenu({ activePanel, onClose }: MegaMenuProps) {
                   Marine Corps Tactical Systems Support Activity — direct support to USMC technology requirements.
                 </p>
               </div>
-              <div className="col-span-2">
+              <div
+                className="rounded-md p-4"
+                style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-subtle)' }}
+              >
+                <div className="flex items-center gap-2 mb-3">
+                  <Shield size={14} style={{ color: 'var(--accent-blue)' }} />
+                  <h4 className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
+                    GSA MAS HACS
+                  </h4>
+                </div>
+                <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                  Highly Adaptive Cybersecurity Services
+                </p>
+              </div>
+              <div className="col-span-1 flex items-end">
                 <Link
                   href="/contracts"
                   onClick={onClose}
-                  className="inline-flex items-center gap-2 text-sm font-semibold transition-colors hover:opacity-80 rounded px-4 py-2"
+                  className="w-full inline-flex items-center justify-center gap-2 text-sm font-semibold transition-colors hover:opacity-80 rounded px-4 py-3"
                   style={{
-                    color: 'var(--bg-base)',
+                    color: '#05050F',
                     background: 'var(--gold)',
                   }}
                 >
-                  Contact Our Contracts Team <ArrowRight size={13} />
+                  Contact <ArrowRight size={13} />
                 </Link>
               </div>
             </div>

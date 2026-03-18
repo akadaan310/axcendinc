@@ -3,13 +3,14 @@
 import { useInView } from '@/hooks/useInView';
 
 const agencies = [
-  { name: 'Defense Intelligence Agency', abbr: 'DIA', src: '/logos/DIA.jpg' },
-  { name: 'United States Navy', abbr: 'USN', src: '/logos/USN.webp' },
+  { name: 'Defense Intelligence Agency', abbr: 'DIA', src: '/logos/DIA.png' },
+  { name: 'United States Navy', abbr: 'USN', src: '/logos/USN-removebg-preview.png' },
   { name: 'U.S. Marine Corps', abbr: 'USMC', src: '/logos/USMC.webp' },
   { name: 'U.S. Air Force', abbr: 'USAF', src: '/logos/USAF.png' },
-  { name: 'Dept. of Commerce', abbr: 'DOC', src: '/logos/DOC.jpg' },
+  { name: 'Dept. of Commerce', abbr: 'DOC', src: '/logos/DOC-logo-new.png' },
   { name: 'NOAA', abbr: 'NOAA', src: '/logos/NOAA.png' },
-  { name: 'Defense Security Cooperation Agency', abbr: 'DSCA', src: '/logos/DSCA.jpg' },
+  { name: 'Defense Security Cooperation Agency', abbr: 'DSCA', src: '/logos/DSCA-new.jpg' },
+  { name: 'FBI', abbr: 'FBI', src: '/logos/fbi-logo.png' },
 ];
 
 function AgencySeal({ agency }: { agency: typeof agencies[0] }) {

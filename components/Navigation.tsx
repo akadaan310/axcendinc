@@ -89,7 +89,7 @@ export default function Navigation() {
               <path d="M16 8 L16 26" stroke="var(--accent-blue)" strokeWidth="1" opacity="0.5" />
             </svg>
             <span
-              className="text-xl font-bold tracking-[0.08em]"
+              className="text-2xl font-bold tracking-[0.08em]"
               style={{
                 fontFamily: 'var(--font-display)',
                 color: 'var(--text-primary)',
@@ -115,7 +115,7 @@ export default function Navigation() {
                 >
                   <Link
                     href={item.href}
-                    className="px-4 py-2 rounded-md text-[15px] font-medium transition-colors duration-150 flex items-center gap-1"
+                    className="px-4 py-2 rounded-md text-[19px] font-medium transition-colors duration-150 flex items-center gap-1"
                     style={{
                       color: isActive ? 'var(--accent-blue)' : 'var(--text-secondary)',
                     }}
@@ -146,7 +146,7 @@ export default function Navigation() {
               <ThemeToggle />
               <Link
                 href="/contact"
-                className="ml-1 px-4 py-2 rounded-md text-[14px] font-semibold transition-all duration-150 flex items-center gap-1.5 hover:gap-2"
+                className="ml-1 px-4 py-2 rounded-md text-[18px] font-semibold transition-all duration-150 flex items-center gap-1.5 hover:gap-2"
                 style={{
                   color: 'var(--accent-blue)',
                   border: '1px solid rgba(0, 87, 255, 0.4)',

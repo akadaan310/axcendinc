@@ -172,9 +172,7 @@ export default function Footer() {
               style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}
             >
               <div>
-                8950 Colesbury Pl
-                <br />
-                Fairfax, Virginia 22031
+                Fairfax, Virginia
               </div>
               <div>
                 <a href="tel:+12404181861" className="hover:text-white transition-colors">
@@ -204,7 +202,7 @@ export default function Footer() {
         style={{ borderTop: '1px solid var(--border-subtle)' }}
       >
         <p className="text-xs" style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>
-          © 2025 Axcend, Inc. All rights reserved. · 8(a) Minority Owned · GSA STARS III Awardee
+          © 2026 Axcend, Inc. All rights reserved. · 8(a) Minority Owned · GSA STARS III Awardee
         </p>
         <div className="flex items-center gap-5">
           <Link

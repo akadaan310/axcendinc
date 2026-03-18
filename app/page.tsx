@@ -52,8 +52,8 @@ function WhyCard({ icon, headline, body, delay = 0 }: WhyCardProps) {
 
 const techTerms1 = [
   'Cybersecurity', '·', 'NIST RMF', '·', 'Zero Trust Architecture', '·', 'FISMA Compliance',
-  '·', 'Cloud Migration', '·', 'AWS', '·', 'Microsoft Azure', '·', 'Google Cloud', '·', 'Office 365',
-  '·', 'ATO Support', '·', 'FedRAMP-Aligned', '·', 'DIACAP', '·', 'DevSecOps',
+  '·', 'Cloud Migration', '·', 'AWS', '·', 'Microsoft Azure', '·', 'Google Cloud', '·', 'AI Solutions',
+  '·', 'ATO Support', '·', 'FedRAMP-Aligned', '·', 'DevSecOps',
 ];
 
 const techTerms2 = [
@@ -126,8 +126,9 @@ export default function HomePage() {
                 border: '1px solid rgba(196,154,42,0.25)',
               }}
             >
+
               <Star size={11} style={{ display: 'inline', marginRight: '6px' }} />
-              8(a) STARS III · GSA Certified · Fairfax, VA
+              GSA ·  MAS · HACS Certified
             </span>
           </div>
 
