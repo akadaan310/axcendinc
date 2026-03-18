@@ -89,7 +89,7 @@ export default function HomePage() {
           muted
           playsInline
           className="absolute inset-0 w-full h-full object-cover pointer-events-none hero-video"
-          src="/hero_loop3.mp4"
+          src="/hero-loop4.mp4"
         />
 
         {/* Blue radial bloom */}
