@@ -27,8 +27,8 @@ function AgencySeal({ agency }: { agency: typeof agencies[0] }) {
         />
       </div>
       <span
-        className="text-[10px] font-semibold tracking-widest uppercase text-center transition-colors group-hover:text-white"
-        style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)', maxWidth: '80px' }}
+        className="text-xs font-semibold tracking-widest uppercase text-center transition-colors group-hover:text-white"
+        style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)', maxWidth: '100px' }}
       >
         {agency.abbr}
       </span>
@@ -81,28 +81,36 @@ export default function ClientLogoStrip({ variant = 'grid', showLabel = true }: 
 
       {/* Commercial clients */}
       <div
-        className={`mt-10 pt-8 flex flex-wrap justify-center gap-3 animate-enter ${isVisible ? 'is-visible' : ''}`}
+        className={`mt-10 pt-8 animate-enter ${isVisible ? 'is-visible' : ''}`}
         style={{
           borderTop: '1px solid var(--border-subtle)',
           transitionDelay: '600ms',
         }}
       >
-        {['Billion Dollar Home Builder', 'Multi-Million Dollar Amazon Shipper', 'Securities Brokerage', 'Commercial Clients'].map(
-          (client) => (
-            <span
-              key={client}
-              className="text-xs px-3 py-1.5 rounded-full font-medium"
-              style={{
-                fontFamily: 'var(--font-mono)',
-                color: 'var(--text-secondary)',
-                border: '1px solid var(--border-subtle)',
-                background: 'var(--bg-surface)',
-              }}
-            >
-              {client}
-            </span>
-          )
-        )}
+        <p
+          className="text-center text-xs font-semibold tracking-widest uppercase mb-6"
+          style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}
+        >
+          Commercial Clients
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          {['Billion Dollar Home Builder', 'Multi-Million Dollar Amazon Shipper', 'Securities Brokerage'].map(
+            (client) => (
+              <span
+                key={client}
+                className="text-xs px-3 py-1.5 rounded-full font-semibold"
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  color: 'var(--gold)',
+                  border: '1px solid rgba(196,154,42,0.3)',
+                  background: 'var(--gold-dim)',
+                }}
+              >
+                {client}
+              </span>
+            )
+          )}
+        </div>
       </div>
     </div>
   );

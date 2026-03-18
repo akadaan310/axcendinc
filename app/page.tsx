@@ -168,6 +168,18 @@ export default function HomePage() {
               8(a) SBA Certified · Minority Owned
             </span>
 
+            <span
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold"
+              style={{
+                background: 'var(--gold-dim)',
+                border: '1px solid rgba(196,154,42,0.3)',
+                color: 'var(--gold)',
+                fontFamily: 'var(--font-mono)',
+              }}
+            >
+              CMMC Level 2 Certified
+            </span>
+
           </div>
 
           {/* CTAs */}
@@ -284,8 +296,9 @@ export default function HomePage() {
           CLIENT LOGOS
       ==================================================== */}
       <section
+        id="clients"
         className="py-24 md:py-28 px-6 md:px-12 lg:px-24 section-divider"
-        style={{ background: 'var(--bg-surface)' }}
+        style={{ background: 'var(--bg-surface)', scrollMarginTop: '100px' }}
         ref={clientsRef.ref as React.RefObject<HTMLElement>}
       >
         <div className="max-w-7xl mx-auto">

@@ -11,6 +11,7 @@ import { useScrolled } from '@/hooks/useScrolled';
 const navItems = [
   { label: 'Services', panel: 'capabilities' as MegaMenuPanel, href: '/capabilities' },
   { label: 'Contracts', panel: 'contracts' as MegaMenuPanel, href: '/contracts' },
+  { label: 'Clients', href: '/#clients' },
   { label: 'About', href: '/about' },
   { label: 'Insights', panel: 'insights' as MegaMenuPanel, href: '/insights' },
 ];
@@ -22,6 +23,7 @@ const mobileLinks = [
   { label: 'Technology Solutions', href: '/capabilities/technology-solutions' },
   { label: 'Financial Management', href: '/capabilities/financial-management' },
   { label: 'Contract Vehicles', href: '/contracts' },
+  { label: 'Clients', href: '/#clients' },
   { label: 'About', href: '/about' },
   { label: 'Insights', href: '/insights' },
   { label: 'Contact', href: '/contact' },
