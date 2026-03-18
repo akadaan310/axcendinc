@@ -501,71 +501,71 @@ export default function HomePage() {
 
             {/* Right — stacked book covers */}
             <div className={`lg:col-span-2 animate-enter-right ${booksRef.isVisible ? 'is-visible' : ''}`}>
-              <div className="relative" style={{ height: '280px' }}>
+              <div className="relative" style={{ height: '400px' }}>
                 {/* Book 3 */}
                 <div
                   className="absolute rounded-lg flex items-center justify-center"
                   style={{
-                    width: '155px', height: '205px',
+                    width: '210px', height: '280px',
                     background: 'linear-gradient(135deg, #0A2040 0%, #0A1628 100%)',
                     border: '1px solid rgba(0,87,255,0.25)',
-                    transform: 'rotate(5deg) translate(120px, 40px)',
+                    transform: 'rotate(5deg) translate(160px, 60px)',
                     zIndex: 1,
                     boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
                   }}
                 >
-                  <div className="p-3 text-center">
-                    <p className="text-[8px] font-bold uppercase tracking-wider mb-1" style={{ color: 'var(--gold)', fontFamily: 'var(--font-mono)' }}>NIST SP 800-53</p>
-                    <p className="text-[11px] font-bold leading-tight" style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
+                  <div className="p-4 text-center">
+                    <p className="text-[3.3px] font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--gold)', fontFamily: 'var(--font-mono)' }}>NIST SP 800-53</p>
+                    <p className="text-[4.6px] font-bold leading-tight" style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
                       Guide to Understanding Security Controls Rev 5
                     </p>
-                    <p className="text-[8px] mt-2 opacity-50" style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>Ray Rafaels</p>
+                    <p className="text-[3.3px] mt-3 opacity-50" style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>Ray Rafaels</p>
                   </div>
                 </div>
                 {/* Book 2 */}
                 <div
                   className="absolute rounded-lg flex items-center justify-center"
                   style={{
-                    width: '155px', height: '205px',
+                    width: '210px', height: '280px',
                     background: 'linear-gradient(135deg, #0D1B35 0%, #091030 100%)',
                     border: '1px solid rgba(0,87,255,0.2)',
-                    transform: 'rotate(-2deg) translate(60px, 55px)',
+                    transform: 'rotate(-2deg) translate(80px, 80px)',
                     zIndex: 2,
                     boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
                   }}
                 >
-                  <div className="p-3 text-center">
-                    <p className="text-[8px] font-bold uppercase tracking-wider mb-1" style={{ color: 'var(--accent-blue)', fontFamily: 'var(--font-mono)' }}>NIST SP 800-53</p>
-                    <p className="text-[11px] font-bold leading-tight" style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
+                  <div className="p-4 text-center">
+                    <p className="text-[3.3px] font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--accent-blue)', fontFamily: 'var(--font-mono)' }}>NIST SP 800-53</p>
+                    <p className="text-[4.6px] font-bold leading-tight" style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
                       Guide to Understanding Security Controls Rev 4
                     </p>
-                    <p className="text-[8px] mt-2 opacity-50" style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>Ray Rafaels</p>
+                    <p className="text-[3.3px] mt-3 opacity-50" style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>Ray Rafaels</p>
                   </div>
                 </div>
                 {/* Book 1 — front */}
                 <div
                   className="absolute rounded-lg flex flex-col items-center justify-center"
                   style={{
-                    width: '163px', height: '215px',
+                    width: '220px', height: '295px',
                     background: 'linear-gradient(135deg, #040F20 0%, #0A1628 100%)',
                     border: '1px solid rgba(0,87,255,0.5)',
-                    transform: 'rotate(-1deg) translate(0px, 25px)',
+                    transform: 'rotate(-1deg) translate(0px, 35px)',
                     zIndex: 3,
                     boxShadow: '0 30px 80px rgba(0,87,255,0.15), 0 20px 60px rgba(0,0,0,0.7)',
                   }}
                 >
-                  <div className="p-4 text-center">
+                  <div className="p-5 text-center">
                     <div
-                      className="w-8 h-8 rounded-full flex items-center justify-center mx-auto mb-3"
+                      className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-4"
                       style={{ background: 'var(--accent-blue-dim)', border: '1px solid rgba(0,87,255,0.4)' }}
                     >
-                      <Cloud size={14} style={{ color: 'var(--accent-blue)' }} />
+                      <Cloud size={18} style={{ color: 'var(--accent-blue)' }} />
                     </div>
-                    <p className="text-[8px] font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--accent-blue)', fontFamily: 'var(--font-mono)' }}>Cloud Computing</p>
-                    <p className="text-[12px] font-bold leading-tight" style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
+                    <p className="text-[3.3px] font-bold uppercase tracking-wider mb-2" style={{ color: 'var(--accent-blue)', fontFamily: 'var(--font-mono)' }}>Cloud Computing</p>
+                    <p className="text-[5.3px] font-bold leading-tight" style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-display)' }}>
                       From Beginning to End
                     </p>
-                    <p className="text-[8px] mt-2 opacity-60" style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>Ray Rafaels</p>
+                    <p className="text-[3.3px] mt-3 opacity-60" style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-mono)' }}>Ray Rafaels</p>
                   </div>
                 </div>
               </div>
