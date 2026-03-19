@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
     const { name, organization, email, phone, inquiryType, message, num1, num2, op, captchaAnswer } = body;
 
     // Validate required fields
-    if (!name || !organization || !email || !inquiryType || !message || !captchaAnswer) {
+    if (!name || !organization || !email || !inquiryType || !captchaAnswer) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -34,7 +34,8 @@ export async function POST(request: NextRequest) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'Axcend Website <contact@axcendinc.com>',
+      // For local testing without a verified domain, use Resend's test sender
+      from: 'Axcend Website <onboarding@resend.dev>',
       to: ['info@axcendinc.com'],
       replyTo: email,
       subject: `New Inquiry: ${inquiryType} — ${name} (${organization})`,
@@ -73,7 +74,7 @@ export async function POST(request: NextRequest) {
 
           <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.08);">
             <p style="color: #8888AA; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 12px;">Message</p>
-            <p style="color: #F0F0F8; font-size: 14px; line-height: 1.7; margin: 0; white-space: pre-wrap;">${message}</p>
+            <p style="color: #F0F0F8; font-size: 14px; line-height: 1.7; margin: 0; white-space: pre-wrap;">${message || 'No message provided'}</p>
           </div>
 
           <div style="margin-top: 32px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08);">

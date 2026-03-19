@@ -17,7 +17,7 @@ const schema = z.object({
   email: z.string().email('Valid email required'),
   phone: z.string().optional(),
   inquiryType: z.string().min(1, 'Please select an inquiry type'),
-  message: z.string().min(20, 'Please provide more detail (min 20 characters)'),
+  message: z.string().optional(),
   captchaAnswer: z.string().min(1, 'Security answer is required'),
 });
 
@@ -264,7 +264,10 @@ function ContactForm() {
           className="block text-xs font-semibold tracking-wider uppercase mb-2"
           style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-mono)' }}
         >
-          Message <span style={{ color: '#F87171' }}>*</span>
+          Message{' '}
+          <span className="font-normal normal-case" style={{ color: 'var(--text-secondary)', letterSpacing: 0 }}>
+            (optional)
+          </span>
         </label>
         <textarea
           {...register('message')}
@@ -402,7 +405,7 @@ function ContactPanel() {
               <Linkedin size={14} style={{ color: 'var(--accent-blue)' }} />
             </div>
             <a
-              href="https://www.linkedin.com/company/axcend"
+              href="https://www.linkedin.com/search/results/all/?keywords=axcend%2C%20inc.&origin=RICH_QUERY_SUGGESTION&heroEntityKey=urn%3Ali%3Aorganization%3A80851858&position=0"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm transition-colors hover:text-white"

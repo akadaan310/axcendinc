@@ -102,7 +102,7 @@ export default function Footer() {
             </div>
 
             <a
-              href="https://www.linkedin.com/company/axcend"
+              href="https://www.linkedin.com/search/results/all/?keywords=axcend%2C%20inc.&origin=RICH_QUERY_SUGGESTION&heroEntityKey=urn%3Ali%3Aorganization%3A80851858&position=0"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm transition-colors hover:text-white"
