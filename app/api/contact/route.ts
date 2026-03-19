@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Resend } from 'resend';
 
 export async function POST(request: NextRequest) {
-  const resend = new Resend(process.env.RESEND_API_KEY || 're_placeholder');
+  const BREVO_API_KEY = process.env.BREVO_API_KEY;
+
   try {
     const body = await request.json();
     const { name, organization, email, phone, inquiryType, message, num1, num2, op, captchaAnswer } = body;
@@ -33,13 +33,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { data, error } = await resend.emails.send({
-      // For local testing without a verified domain, use Resend's test sender
-      from: 'Axcend Website <onboarding@resend.dev>',
-      to: ['info@axcendinc.com'],
-      replyTo: email,
-      subject: `New Inquiry: ${inquiryType} — ${name} (${organization})`,
-      html: `
+    const htmlContent = `
         <div style="font-family: 'Courier New', monospace; max-width: 600px; margin: 0 auto; background: #05050F; color: #F0F0F8; padding: 32px; border-radius: 8px;">
           <div style="border-left: 4px solid #0057FF; padding-left: 16px; margin-bottom: 24px;">
             <h1 style="font-size: 24px; font-weight: 700; margin: 0 0 4px; color: #F0F0F8;">New Website Inquiry</h1>
@@ -81,18 +75,36 @@ export async function POST(request: NextRequest) {
             <p style="color: #8888AA; font-size: 11px; margin: 0;">Axcend, Inc. · 8950 Colesbury Pl, Fairfax, VA 22031 · 8(a) GSA STARS III Awardee</p>
           </div>
         </div>
-      `,
+      `;
+
+    // Brevo API Request
+    const res = await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'api-key': BREVO_API_KEY || '',
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        sender: { name: "Axcend Website", email: "akadaan310@gmail.com" },
+        to: [{ email: "rrafaels@axcendinc.com" }],
+        replyTo: { email: email },
+        subject: `New Inquiry: ${inquiryType} — ${name} (${organization})`,
+        htmlContent: htmlContent
+      })
     });
 
-    if (error) {
-      console.error('Resend error:', error);
+    const result = await res.json();
+
+    if (!res.ok) {
+      console.error('Brevo error:', result);
       return NextResponse.json(
         { error: 'Failed to send email. Please try again or call us directly.' },
         { status: 500 }
       );
     }
 
-    return NextResponse.json({ success: true, id: data?.id });
+    return NextResponse.json({ success: true, id: result.messageId });
   } catch (err) {
     console.error('Contact route error:', err);
     return NextResponse.json(
